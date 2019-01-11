@@ -39,6 +39,9 @@ module MailbuddyBackend
       end
     end
 
+    config.middleware.insert_after ActiveRecord::Migration::CheckPending, ActionDispatch::Cookies
+    config.middleware.insert_after ActionDispatch::Cookies, ActionDispatch::Session::CookieStore
+
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'secrets.yml')
       YAML.load(File.open(env_file)).each do |key, value|
