@@ -8,4 +8,4 @@
 
 require 'bcrypt'
 
-User.create(username: 'iman', gmail_username: 'imanj12@gmail.com', password_digest: BCrypt::Password.create('iman'))
+# User.create(username: 'iman', gmail_username: 'imanj12@gmail.com', password_digest: BCrypt::Password.create('iman'))
